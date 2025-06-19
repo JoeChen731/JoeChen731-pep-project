@@ -5,7 +5,6 @@ import Service.AccountService;
 import Service.MessageService;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-import io.javalin.http.HttpStatus;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -38,11 +37,7 @@ public class SocialMediaController {
      */
 
     public Javalin startAPI() {
-        Javalin app = Javalin.create(config -> {
-            config.http.defaultContentType = "application/json";
-            config.plugins.enableDevLogging();
-        });
-
+         Javalin app = Javalin.create();
         // Account endpoints
         app.post("/register", this::registerHandler);
         app.post("/login", this::loginHandler);
