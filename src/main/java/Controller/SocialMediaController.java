@@ -157,7 +157,6 @@ public class SocialMediaController {
      * Handles requests to get all messages by a specific user
      * @param ctx The Javalin context containing request and response information
      * * Responses:
-     * - 200 OK with JSON array of messages (empty array if no messages exist for user)
      */
     private void getMessagesByUserHandler(Context ctx) {
         int account_id = Integer.parseInt(ctx.pathParam("account_id"));
